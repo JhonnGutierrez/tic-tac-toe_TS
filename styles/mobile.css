@@ -1,0 +1,26 @@
+.game-container{
+    gap: .6rem;
+    margin-top: 15rem;
+    margin-bottom: 0;
+}
+.box{
+    width: 9rem;
+    height: 9rem;
+}
+
+#playerStart-container{
+    top: 10rem;
+}
+
+.score-container{
+    flex-direction: row;
+    right: auto;
+}
+
+.reset-button{
+    margin-top: 3rem;
+}
+
+#winnerMessage {
+    font-size: 8rem;
+}

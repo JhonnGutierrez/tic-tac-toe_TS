@@ -1,0 +1,15 @@
+.box{
+    width: 20rem;
+    height: 20rem;
+    font-size: 16rem;
+}
+
+#playerStart-container{
+    top: 4rem;
+    font-size: 4rem;
+}
+
+.reset-button {
+    font-size: 4rem;
+    padding: 2rem 4rem;
+}
