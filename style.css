@@ -1,0 +1,145 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    position: relative;
+}
+#playerStart-container{
+    position: absolute;
+    top: 2.4rem;
+    font-size: 2.8rem;
+    font-weight: 500;
+    animation-name: blink ;
+    animation-duration: 700ms;
+    animation-iteration-count:  infinite;
+    animation-timing-function: cubic-bezier(1,-0.01,1,-0.02);
+}
+
+@keyframes blink {
+    0% {opacity: 100;}
+    50%{opacity: 0;}
+    100% {opacity: 100;}
+}
+
+#playerStart-container.invisible{
+    visibility: hidden;
+}
+
+.game-container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    background-color: black;
+    gap: .8rem;
+    width: min-content;
+    margin: 4rem;
+}
+
+.box {
+    background-color: white;
+    width: 12rem;
+    height: 12rem;
+    cursor: pointer;
+    font-size: 8rem;
+    display: flex;
+    justify-content: center;
+    user-select: none;
+}
+
+.box.disable {
+    cursor:default;
+}
+
+.score-container {
+    margin: 2rem;
+    font-size: 4rem;
+    display: flex;
+    position: absolute;
+    right: 0;
+    top: 0;
+    border: 4px solid black;
+    flex-direction: column;
+    padding: 1rem;
+}
+
+.first-player, .second-player {
+    display: flex;
+    flex-direction: row;
+    height: 4rem;
+    width: 8rem;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.divider {
+    display: inline-block;
+}
+
+/* .second-player-score::before{
+    content: '-';
+    position: absolute;
+    right: 5rem;
+} */
+
+.reset-button{
+    font-size: 2rem;
+    padding: 1rem 2rem;
+    border: none;
+    background-color: rgb(214, 214, 214);
+    transition: transform 250ms, background-color 250ms;
+    margin: 4rem;
+}
+
+.reset-button:hover {
+    cursor: pointer;
+    background-color: rgb(159, 159, 159);
+}
+
+.reset-button:active {
+    transform: scale(1.1);
+}
+
+#winnerMessage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    min-height: 100vh;
+    min-width: 100vw;
+    font-size: 15rem;
+    background-color: #fff9;
+    cursor: pointer;
+    visibility: hidden;
+}
+
+#winnerMessage.visible {
+    visibility: visible;
+}
+
+#winnerMessage span{
+    will-change: auto;
+    animation-name: pulse;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    user-select: none;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1) rotateZ(-8deg);}
+    50% { transform: scale(1.1) rotateZ(-5deg);}
+    100% { transform: scale(1) rotateZ(-8deg);}
+}
