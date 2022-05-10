@@ -85,16 +85,6 @@ body {
     justify-content: space-around;
 }
 
-.divider {
-    display: inline-block;
-}
-
-/* .second-player-score::before{
-    content: '-';
-    position: absolute;
-    right: 5rem;
-} */
-
 .reset-button{
     font-size: 2rem;
     padding: 1rem 2rem;
